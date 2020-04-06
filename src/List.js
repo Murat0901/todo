@@ -1,10 +1,10 @@
 import React from 'react';
 
 const List = (props) => 
-    <div>
-        <ul>
+    <div className="container">
+        <ul className="list-gropu">
           {props.items.map(item => (
-            <li>
+            <li className="list-group-item">
                 {item}
             </li>
           ))}

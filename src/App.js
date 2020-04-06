@@ -25,12 +25,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <form onSubmit={this.onFormSubmitHandler}>
-          Yapmak istediğin şey nedir?
+        <h1>Todo App by Murat Menzilci</h1>
+          <p>Yapmak istediğin şey nedir?</p>
           <input
               onChange={this.onChangeHandler}
+              value={this.state.term}
               type="text"
+              placeholder="Add your text here"
             />
         </form>
         <List items={this.state.items}/>
