@@ -23,6 +23,14 @@ class App extends Component {
       })
   }
 
+  onDeleteHandler = index => {
+    const deleteTask = [...this.state.items];
+    deleteTask.splice(index, 1);
+    this.setState({
+      items: deleteTask
+    })
+  }
+
   render() {
     return (
       <div className="container">
@@ -30,13 +38,19 @@ class App extends Component {
         <h1>Todo App by Murat Menzilci</h1>
           <p>Yapmak istediğin şey nedir?</p>
           <input
+              className="input"
               onChange={this.onChangeHandler}
               value={this.state.term}
               type="text"
               placeholder="Add your text here"
             />
+          <button className="btn" onClick={this.onFormSubmitHandler}>+</button>
         </form>
-        <List items={this.state.items}/>
+        
+        <List 
+        deleteTask={this.onDeleteHandler}
+        items={this.state.items}/>
+        
       </div>
     )
   }
