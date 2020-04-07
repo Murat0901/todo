@@ -1,8 +1,8 @@
 import React from 'react';
 
 const List = (props) => 
-    <div className="container">
-        <ul className="list-gropu">
+    <div>
+        <ul className="list-group col-md-12">
           {props.items.map((item,index) => (
             <li 
             key={index}

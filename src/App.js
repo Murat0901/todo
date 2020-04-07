@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import List from './List'
+import './App.css'
 
 
 class App extends Component {
@@ -38,13 +39,13 @@ class App extends Component {
         <h1>Todo App by Murat Menzilci</h1>
           <p>Yapmak istediğin şey nedir?</p>
           <input
-              className="input"
+              className="col-md-8"
               onChange={this.onChangeHandler}
               value={this.state.term}
               type="text"
               placeholder="Add your text here"
             />
-          <button className="btn" onClick={this.onFormSubmitHandler}>+</button>
+          <button className="btn col-md-2" onClick={this.onFormSubmitHandler}>Ekle</button>
         </form>
         
         <List 
