@@ -18,10 +18,17 @@ class App extends Component {
 
   onFormSubmitHandler = e => {
       e.preventDefault();
-      this.setState({
-        term:"",
-        items: [...this.state.items, this.state.term]
-      })
+      let items = this.state.term
+      const msg = document.querySelector('.msg');
+      if (items==="") {
+        msg.innerHTML = 'Please enter the field'; 
+      } else {
+        this.setState({
+          term:"",
+          items: [...this.state.items, this.state.term]
+        })
+      }
+
   }
 
   onDeleteHandler = index => {
@@ -38,6 +45,7 @@ class App extends Component {
         <form onSubmit={this.onFormSubmitHandler}>
         <h1>Todo App by Murat Menzilci</h1>
           <p>Yapmak istediğin şey nedir?</p>
+          <div className="msg"></div>
           <input
               className="col-md-8"
               onChange={this.onChangeHandler}
@@ -45,7 +53,7 @@ class App extends Component {
               type="text"
               placeholder="Add your text here"
             />
-          <button className="btn col-md-2" onClick={this.onFormSubmitHandler}>Ekle</button>
+          <button className="mybtn col-md-2" onClick={this.onFormSubmitHandler}>Ekle</button>
         </form>
         
         <List 
